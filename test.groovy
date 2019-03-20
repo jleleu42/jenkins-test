@@ -12,6 +12,6 @@ job('My Job php') {
     }
     steps {
         shell("composer install")
-        shell("./vendor/bin/phpunit test.php")
+        shell("./php/vendor/bin/phpunit test.php")
     }
 }
