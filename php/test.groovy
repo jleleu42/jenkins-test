@@ -9,7 +9,7 @@ job('My Job php') {
         scm('H/5 * * * *')
     }
     steps {
-        shell("composer install")
-        shell("./vendor/bin/phpunit ./php/test.php")
+        shell("composer install -d ./php/")
+        shell("./php/vendor/bin/phpunit ./php/test.php")
     }
 }
