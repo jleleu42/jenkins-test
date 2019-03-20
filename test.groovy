@@ -10,9 +10,6 @@ job('My Job php') {
     triggers {
         scm('H/5 * * * *')
     }
-    wrappers {
-        nodejs('NodeJS9')
-    }
     steps {
         shell("composer install")
         shell("./vendor/bin/phpunit test.php")
