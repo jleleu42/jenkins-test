@@ -62,7 +62,7 @@
   </parallel>
  </target>
 
- <target name="composer" description="Installing composer dependencies">
+ <target name="install" description="Installing composer dependencies">
  <exec executable="composer" failonerror="true">
   <arg value="install" />
  </exec>
