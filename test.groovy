@@ -10,7 +10,9 @@ job('My Job php') {
     }
     steps {
         shell("ls")
-        shell("composer install ./php/")
+        shell("cd ./php")
+        shell("ls")
+        shell("composer require ./php/")
         shell("./php/vendor/bin/phpunit test.php")
     }
 }
