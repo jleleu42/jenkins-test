@@ -1,5 +1,3 @@
-
-19 lines (18 sloc) 383 Bytes
 job('My Job php') {
     scm {
         git('https://github.com/jleleu42/jenkins-test') {  node -> 
