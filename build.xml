@@ -44,7 +44,7 @@
          description="Performs static analysis" />
 
  <target name="install"
-         depends="prepare,lint,install,phpunit"
+         depends="prepare,lint,composer-install,phpunit"
          description="Spé only test " />
 
  <!-- Adjust the threadCount attribute's value to the number of CPUs -->
@@ -62,7 +62,7 @@
   </parallel>
  </target>
 
- <target name="install" description="Installing composer dependencies">
+ <target name="composer-install" description="Installing composer dependencies">
  <exec executable="composer" failonerror="true">
   <arg value="install" />
  </exec>
