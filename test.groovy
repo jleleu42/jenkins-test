@@ -14,7 +14,7 @@ job('My Job php') {
         nodejs('NodeJS9')
     }
     steps {
-        shell("npm install")
-        shell("npm test")
+        shell("composer install")
+        shell("./vendor/bin/phpunit test.php")
     }
 }
