@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="name-of-project" default="quick-build">
+<project name="name-of-project" default="install">
  <!-- By default, we assume all tools to be on the $PATH
  <property name="pdepend" value="pdepend"/>
  <property name="phpcpd"  value="phpcpd"/>
@@ -43,8 +43,8 @@
          depends="lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
          description="Performs static analysis" />
 
- <target name="only-test"
-         depends="phpunit"
+ <target name="install"
+         depends="prepare,lint,install,phpunit"
          description="Spé only test " />
 
  <!-- Adjust the threadCount attribute's value to the number of CPUs -->
@@ -61,6 +61,12 @@
    <antcall target="phploc-ci"/>
   </parallel>
  </target>
+
+ <target name="composer" description="Installing composer dependencies">
+ <exec executable="composer" failonerror="true">
+  <arg value="install" />
+ </exec>
+</target>
 
  <target name="clean"
          unless="clean.done"
