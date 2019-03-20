@@ -1,6 +1,6 @@
 <?php
 
-    spl_autoload("Autoload.php");
+    spl_autoload("./vendor/Autoload.php");
     use PHPUnit\Framework\TestCase;
 
     require_once "User.php";
