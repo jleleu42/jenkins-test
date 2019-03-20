@@ -9,10 +9,7 @@ job('My Job php') {
         scm('H/5 * * * *')
     }
     steps {
-        shell("ls")
-        shell("cd ./php")
-        shell("ls")
-        shell("composer require ./php/")
-        shell("./php/vendor/bin/phpunit test.php")
+        shell("composer install")
+        shell("./vendor/bin/phpunit test.php")
     }
 }
